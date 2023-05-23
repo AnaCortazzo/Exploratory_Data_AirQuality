@@ -1,0 +1,63 @@
+---
+title: "CourseProject"
+author: "Ana Cortazzo"
+date: '2022-06-06'
+---
+
+## Introduccion
+Las partículas finas (PM2,5) son un contaminante del aire ambiente del que existen pruebas sólidas de que es perjudicial para la salud humana. En Estados Unidos, la Agencia de Protección del Medio Ambiente (EPA) se encarga de establecer normas nacionales de calidad del aire ambiente para las PM finas y de hacer un seguimiento de las emisiones de este contaminante a la atmósfera. Aproximadamente cada 3 años, la EPA publica su base de datos sobre las emisiones de PM2,5. Esta base de datos se conoce como el Inventario Nacional de Emisiones (NEI). Puede leer más información sobre el NEI en la página web del Inventario Nacional de Emisiones de la EPA.
+
+Para cada año y para cada tipo de fuente de PM, el NEI registra cuántas toneladas de PM2,5 fueron emitidas por esa fuente en el transcurso de todo el año. Los datos que utilizará para esta tarea corresponden a 1999, 2002, 2005 y 2008.
+
+
+## Data
+El archivo zip contiene dos archivos:
+
+Datos de emisiones de PM2.5 (summarySCC_PM25.rds): Este archivo contiene un marco de datos con todos los datos de emisiones de PM2.5 para 1999, 2002, 2005 y 2008. Para cada año, la tabla contiene el número de toneladas de PM2.5 emitidas por un tipo específico de fuente para todo el año. Aquí están las primeras filas.
+
+
+*fips: A five-digit number (represented as a string) indicating the U.S. county
+
+*SCC: The name of the source as indicated by a digit string (see source code classification table)
+
+*Pollutant: A string indicating the pollutant
+
+*Emissions: Amount of PM2.5 emitted, in tons
+
+*type: The type of source (point, non-point, on-road, or non-road)
+
+*year: The year of emissions recorded
+
+Tabla de códigos de clasificación de fuentes (Source_Classification_Code.rds): Esta tabla proporciona una correspondencia entre las cadenas de dígitos SCC de la tabla de emisiones y el nombre real de la fuente de PM2,5. Las fuentes están clasificadas de diferentes maneras, desde las más generales hasta las más específicas, y usted puede elegir explorar las categorías que considere más útiles. Por ejemplo, la fuente "10100101" se conoce como "Ext Comb /Electric Gen /Anthracite Coal /Pulverized Coal".
+
+## Tarea
+
+El objetivo general de esta tarea es explorar la base de datos del Inventario Nacional de Emisiones y ver qué dice sobre la contaminación por partículas finas en los Estados Unidos durante el período de 10 años 1999-2008. Puede utilizar cualquier paquete R que desee para apoyar su análisis.
+Preguntas
+
+Debe abordar las siguientes preguntas y tareas en su análisis exploratorio. Para cada pregunta/tarea deberá realizar un único gráfico. A menos que se especifique, puede utilizar cualquier sistema de trazado en R para hacer su gráfico.
+
+1. ¿Han disminuido las emisiones totales de PM2.5 en los Estados Unidos desde 1999 hasta 2008? Usando el sistema de trazado base, haga un trazado que muestre la emisión total de PM2.5 de todas las fuentes para cada uno de los años 1999, 2002, 2005 y 2008.
+
+2. ¿Han disminuido las emisiones totales de PM2.5 en la ciudad de Baltimore, Maryland (fips == "24510") de 1999 a 2008? Utilice el sistema de trazado base para hacer un trazado que responda a esta pregunta.
+
+3. De los cuatro tipos de fuentes indicados por la variable tipo (puntual, no puntual, en carretera, no en carretera), ¿cuáles de estas cuatro fuentes han visto disminuciones en las emisiones desde 1999 a 2008 para la ciudad de Baltimore? ¿Cuáles han experimentado un aumento de las emisiones entre 1999 y 2008? Utiliza el sistema de trazado ggplot2 para hacer un gráfico que responda a esta pregunta.
+
+4. En los Estados Unidos, ¿cómo han cambiado las emisiones de las fuentes relacionadas con la combustión del carbón entre 1999 y 2008?
+
+5. ¿Cómo han cambiado las emisiones procedentes de fuentes de vehículos de motor entre 1999 y 2008 en la ciudad de Baltimore?
+
+6. Compare las emisiones procedentes de fuentes de vehículos de motor en la ciudad de Baltimore con las emisiones procedentes de fuentes de vehículos de motor en el condado de Los Ángeles, California (fips == "06037"). ¿Qué ciudad ha experimentado mayores cambios a lo largo del tiempo en las emisiones de los vehículos de motor?
+
+
+## Entrega
+
+Para cada parcela debe
+
+1. Construir el gráfico y guardarlo en un archivo PNG.
+
+1. Crear un archivo de código R separado (plot1.R, plot2.R, etc.) que construya el gráfico correspondiente, es decir, el código en plot1.R construye el gráfico plot1.png. Su archivo de código debe incluir el código para la lectura de los datos para que el gráfico pueda ser reproducido completamente. También debe incluir el código que crea el archivo PNG. Sólo incluya el código para un solo gráfico (es decir, plot1.R sólo debe incluir el código para producir plot1.png)
+
+2. Cargue el archivo PNG en la página de envío de la tarea
+
+3. Copie y pegue el código R del archivo R correspondiente en el cuadro de texto en el punto apropiado de la evaluación por pares.
